@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-cyve_&9s)in+rvq7!s-f)*@-&gp7k7rx%i&%txf1^19z#yt!r1"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.onrender.com']
 
 
 # Application definition
@@ -122,12 +122,19 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
-STATIC_ROOT = BASE_DIR / 'productionfiles'
+import os
 
-STATIC_URL = 'static/'
+# STATIC_ROOT باید به جایی اشاره کنه که فایل‌های استاتیک جمع‌آوری می‌شن
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+# STATIC_URL برای دسترسی به فایل‌های استاتیک از طریق URL
+STATIC_URL = '/static/'
+
+# در این قسمت پوشه‌های استاتیکی که به پروژه اضافه می‌کنی باید وارد بشه
 STATICFILES_DIRS = [
-    BASE_DIR / 'mystaticfiles']
+    os.path.join(BASE_DIR, 'mystaticfiles'),
+]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
