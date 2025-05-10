@@ -338,6 +338,7 @@ webencodings==0.5.1
 websocket-client @ file:///work/ci_py311/websocket-client_1676824890004/work
 Werkzeug @ file:///croot/werkzeug_1679489717957/work
 whatthepatch @ file:///work/ci_py311/whatthepatch_1677708379946/work
+whitenoise==6.9.0
 widgetsnbextension @ file:///croot/widgetsnbextension_1679313860248/work
 wquantiles==0.6
 wrapt @ file:///work/ci_py311/wrapt_1676827586170/work
